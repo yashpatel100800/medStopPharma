@@ -1,0 +1,58 @@
+/* styles.css - Custom styles for Tailwind-based layout */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Background image applied to container using ::before pseudo-element */
+.container {
+    position: relative;
+    z-index: 1; /* Ensures content is above the background */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Adjust size as needed */
+    height: 80%;
+    background-image: url('background.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.1; /* Adjust for subtlety */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Keeps background behind the content */
+    pointer-events: none; /* Ensures the background doesn’t interfere with text selection */
+}
+
+/* Custom styling for the pharmacy name */
+.pharmacy-name {
+    letter-spacing: 0.5px;
+}
+
+/* Customize hr for a more subtle divider line */
+hr {
+    border-color: #e5e7eb; /* light gray */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Extra padding for mobile screens */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+}
+
+/* Hover effect for footer links (e.g., email and phone) */
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Custom hover style for the "FREE DELIVERY" note */
+.delivery-note:hover {
+    color: #2f855a; /* Darker green on hover */
+}

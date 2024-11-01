@@ -1,0 +1,51 @@
+/* styles.css - Custom styles for Tailwind-based layout */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Background image for Coming Soon container */
+.container {
+    position: relative;
+    z-index: 1; /* Ensures content is above the background */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; /* Adjust size as needed */
+    height: 80%;
+    background-image: url('background.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* Adjust for subtlety */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Keeps background behind the content */
+    pointer-events: none; /* Ensures the background doesn’t interfere with text selection */
+}
+
+/* Countdown timer styling */
+.countdown .time span {
+    color: #333;
+}
+
+/* Custom hover and font styling */
+.notify input,
+.notify button {
+    font-size: 1rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+}
